@@ -57,3 +57,6 @@ dkms.conf
 *.browse
 *.linf
 *.log
+
+#folder
+si/

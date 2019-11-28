@@ -14,6 +14,7 @@
 #include "tm1652.h"
 #include "key.h"
 #include "adc1.h"
+#include "uart1.h"
 /* 数值定义 ----------------------------------------------------------------*/
 uint16_t  data;
 
@@ -23,7 +24,7 @@ u8 CODE[] = {0x3f,0x06,0x5b,0x4f,0x66,0x6d,0x7d,0x07,0x7f,0x6f, //0~9显示代码
              //g   H     i   L    n    o     p    r    s    t   u    U          y   -
 
 /* 函数声明 ------------------------------------------------------------------*/
-void  Delay(uint32_t nCount);
+static void  Delay(uint32_t nCount);
 void  display(u8 disnum,u8 disbit,u8 dotbit);
 void  discount(s16 disdata,u8 dotbit);
 void  disfun(void);
@@ -50,12 +51,19 @@ void main(void)
   CLK_HSIPrescalerConfig(CLK_PRESCALER_HSIDIV1);        //配置系统时钟HSI = 16M/1
   Delay(5000);
   LED_Init();
-  KEY_Init();
+  //KEY_Init();
   ADC1_Config();
   TIM4_Config();
   SHUMAGUAN_Init();
+  UART1_Config();
 
   enableInterrupts();   //使能总中断 
+  {
+    UART1_SendByte('a');
+    UART1_SendByte('b');
+    UART1_SendByte('c');
+    UART1_SendByte('\n');
+  }
   
   while (1)
   {
@@ -67,14 +75,30 @@ void main(void)
       {
         data=0;
         Conversion_Value = ADC1_GetConversionValue();
-        discount(Conversion_Value,0);
+        //discount(Conversion_Value,0);
+        UART1_printf("\r\n current ADC value: ");
+        UART1_Send_IntToStr(Conversion_Value);
+    		// UART1_SendByte((Conversion_Value & 0xff00 ) >> 8);
+    		// UART1_SendByte((Conversion_Value & 0x00ff ) );
       }
       /*扫描按键*/
+	  #if 0
       key=key_read();
       if(key)
       {
           GPIO_WriteReverse(LED1_GPIO_PORT, (GPIO_Pin_TypeDef)LED1_GPIO_PINS); 
       }
+	  #endif
+    }
+
+    if (Rxd_flag)
+    {
+      for (int i = 0; i < 0x08; ++i)
+      {
+        UART1_SendByte(p_rxbuf[i]);
+      }
+
+      Rxd_flag = 0;
     }
   }
 
@@ -233,7 +257,7 @@ u8 key_read(void)
   * @参  数       nCount
   * @返回值       无
   */
-void Delay(uint32_t nCount)
+static void Delay(uint32_t nCount)
 {
   /* 减少 nCount 值 */
   while (nCount != 0)
