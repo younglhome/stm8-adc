@@ -489,7 +489,7 @@
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>UART1.s19</state>
+                    <state>adc.s19</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -1621,6 +1621,9 @@
         </file>
         <file>
             <name>$PROJ_DIR$\Bsp\tm1652.c</name>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\Bsp\uart1.c</name>
         </file>
     </group>
     <group>

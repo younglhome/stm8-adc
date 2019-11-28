@@ -25,7 +25,7 @@ if not "%~1" == "" goto debugFile
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\younglhome\work\mcu\stm8s001j3\出厂程序\settings\UART1.Debug.general.xcl" --backend -f "C:\Users\younglhome\work\mcu\stm8s001j3\出厂程序\settings\UART1.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\younglhome\repo\stm8\stm8-adc\settings\UART1.Debug.general.xcl" --backend -f "C:\Users\younglhome\repo\stm8\stm8-adc\settings\UART1.Debug.driver.xcl" 
 
 @echo off 
 goto end 
@@ -34,7 +34,7 @@ goto end
 
 @echo on 
 
-"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\younglhome\work\mcu\stm8s001j3\出厂程序\settings\UART1.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\younglhome\work\mcu\stm8s001j3\出厂程序\settings\UART1.Debug.driver.xcl" 
+"C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.0\common\bin\cspybat" -f "C:\Users\younglhome\repo\stm8\stm8-adc\settings\UART1.Debug.general.xcl" "--debug_file=%~1" --backend -f "C:\Users\younglhome\repo\stm8\stm8-adc\settings\UART1.Debug.driver.xcl" 
 
 @echo off 
 :end

@@ -49,7 +49,7 @@
         <MultiCoreRunAll>1</MultiCoreRunAll>
     </Simulator>
     <DebugChecksum>
-        <Checksum>1685433171</Checksum>
+        <Checksum>1980195972</Checksum>
     </DebugChecksum>
     <CallStack>
         <ShowArgs>0</ShowArgs>
@@ -62,25 +62,20 @@
         <GraphEnabled>0</GraphEnabled>
         <ShowTimeLog>1</ShowTimeLog>
     </DataSample>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
-    <TermIOLog>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-    </TermIOLog>
     <Breakpoints>
         <Count>0</Count>
     </Breakpoints>
     <Aliases>
-        <A0>_ "C:\Users\win10\Desktop\STM8S001项目\Software\UART1\UART1_HyperTerminal_Interrupt\Bsp\uart1.c" ""</A0>
-        <A1>_ "C:\Users\win10\Desktop\STM8S001项目\Software\UART1\UART1_HyperTerminal_Interrupt\StdPeriph_Driver\src\stm8s_clk.c" ""</A1>
-        <A2>_ "C:\Users\win10\Desktop\STM8S001项目\Software\UART1\UART1_HyperTerminal_Interrupt\StdPeriph_Driver\src\stm8s_gpio.c" ""</A2>
-        <A3>_ "C:\Users\win10\Desktop\STM8S001项目\Software\UART1\UART1_HyperTerminal_Interrupt\StdPeriph_Driver\src\stm8s_uart1.c" ""</A3>
-        <A4>_ "C:\Users\win10\Desktop\STM8S001项目\Software\UART1\UART1_HyperTerminal_Interrupt\User\main.c" ""</A4>
-        <Count>5</Count>
+        <Count>0</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
     <DebuggerSettings>

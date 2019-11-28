@@ -2114,6 +2114,9 @@
         <file>
             <name>$PROJ_DIR$\Bsp\tm1652.c</name>
         </file>
+        <file>
+            <name>$PROJ_DIR$\Bsp\uart1.c</name>
+        </file>
     </group>
     <group>
         <name>StdPeriph_Driver</name>
